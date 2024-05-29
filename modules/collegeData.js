@@ -12,9 +12,6 @@ class Data {
 //dataCollection is the variable which will store an instance of the Data class.
 let dataCollection = null;
 
-//This is the helper function that reads the JSON file and parses its content, returning a promise at the end
-
-
 //initialize() function will read the students.json file and courses.json file, initializes the Data object as well as their contents and 
 //at last assigns it to the dataCollection
 function initialize() {

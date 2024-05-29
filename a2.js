@@ -8,15 +8,18 @@
 *
 ********************************************************************************/ 
 
-// Require the collegeData module
+//Requiring the collegeData module and mentioned its path
 const collegeData = require('./modules/collegeData');
 
-// Invoke the initialize function
+//here, collegeData() function is invoked.
+//it reads both students.json and courses.json file, parses the data and stores the data in dataCollection object
 collegeData.initialize()
     .then(() => {
-        // Initialization successful, proceed to test the other functions
 
-        // Test getAllStudents function
+        //Testing all the functions
+        //then parth is executed if initialize function resolves succesfully
+        //Test getAllStudents function, Retrieves all students and logs the number of students retrieved to the console
+        //catch block to handle any errors if occurred
         collegeData.getAllStudents()
             .then(students => {
                 console.log(`Successfully retrieved ${students.length} students`);
@@ -25,7 +28,7 @@ collegeData.initialize()
                 console.error(`Error retrieving students: ${err}`);
             });
 
-        // Test getCourses function
+        //Test getCourses function, Retrieves all courses and logs the number of courses retrieved to the console
         collegeData.getCourses()
             .then(courses => {
                 console.log(`Successfully retrieved ${courses.length} courses`);
@@ -34,7 +37,7 @@ collegeData.initialize()
                 console.error(`Error retrieving courses: ${err}`);
             });
 
-        // Test getTAs function
+        //Test getTAs function, Retrieves all TAs and logs the number of TAs retrieved to the console
         collegeData.getTAs()
             .then(TAs => {
                 console.log(`Successfully retrieved ${TAs.length} TAs`);
@@ -45,6 +48,6 @@ collegeData.initialize()
 
     })
     .catch(err => {
-        // Initialization failed
+        //Initialization failed
         console.error(`Initialization error: ${err}`);
     });
